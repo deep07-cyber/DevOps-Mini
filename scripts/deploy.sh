@@ -2,7 +2,7 @@
 set -e
 
 echo "Pulling image..."
-docker pull portfolio
+docker pull harshit0103/portfolio:latest
 
 echo "Stopping old container..."
 docker stop flaskapp || true
