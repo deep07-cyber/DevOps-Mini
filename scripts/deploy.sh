@@ -9,4 +9,4 @@ docker stop flaskapp || true
 docker rm flaskapp || true
 
 echo "Running new container..."
-docker run -d --name flaskapp  -p 5000:5000 -e PORT=5000  portfolio
+docker run -d --name flaskapp  -p 5000:5000 -e PORT=5000  harshit0103/portfolio:latest
