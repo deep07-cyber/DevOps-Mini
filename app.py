@@ -1,26 +1,38 @@
-from flask import Flask, render_template
+from flask import Flask, request, jsonify
+import pandas as pd
+import os
+from datetime import datetime
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # allow frontend hosted on another port or domain
 
-@app.route('/')
-def home():
-    # You can pass data dynamically to template
-    portfolio_data = {
-        'name': 'Harshit Pawar',
-        'introduction': 'I am a Data Analyst with experience in Python, SQL, and Data Visualization.',
-        'skills': ['Python', 'SQL', 'Power BI', 'Tableau', 'Excel'],
-        'projects': [
-            {'name': 'IPL Analysis', 'description': 'Analysis of IPL matches data.'},
-            {'name': 'Restaurant Data Analysis', 'description': 'Insights on restaurant data for business growth.'}
-        ],
-        'contact': {
-            'email': 'harshitpawar0103@gmail.com',
-            'phone': '+91 6263264146',
-            'linkedin': 'https://linkedin.com/in/harshitpawar'
-        }
-    }
-    return render_template('index.html', data=portfolio_data)
+CSV_FILE = 'submissions.csv'
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+# Create CSV with headers if it doesn't exist
+if not os.path.exists(CSV_FILE):
+    df = pd.DataFrame(columns=['Name', 'Email', 'Message', 'Date'])
+    df.to_csv(CSV_FILE, index=False)
 
+@app.route('/contact', methods=['POST'])
+def contact():
+    data = request.get_json()
+    name = data.get('name')
+    email = data.get('email')
+    message = data.get('message')
+
+    if not name or not email or not message:
+        return jsonify({'error': 'Please fill all fields'}), 400
+
+    # Append submission to CSV
+    df = pd.DataFrame([{
+        'Name': name,
+        'Email': email,
+        'Message': message,
+        'Date': datetime.now().isoformat()
+    }])
+    df.to_csv(CSV_FILE, mode='a', header=False, index=False)
+    return jsonify({'success': True, 'message': 'Message saved to CSV!'}), 200
+
+if __name__ == '__main__':
+    app.run(debug=True)
