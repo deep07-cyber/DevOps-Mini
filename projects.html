@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Rupali Pawar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">RP</div>
+        <div class="brand-text">
+          <div class="brand-name">Rupali Pawar</div>
+          <div class="brand-role">Data Analyst • 7 yrs</div>
+        </div>
+      </div>
+
+      <nav class="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="index.html#contact" class="nav-link cta">Contact</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="reveal card projects-full">
+        <h2>Projects</h2>
+        <p class="small muted">Deep-dive into selected work with measurable outcomes.</p>
+
+        <div class="projects-grid">
+          <article class="project card">
+            <div class="thumb">Sales Dashboard</div>
+            <div class="meta">
+              <h4>Sales Performance Dashboard — Power BI</h4>
+              <p class="small muted">Automated reporting; reduced manual reporting time by <strong>40 hours/month</strong>. Live SQL refresh & forecasting.</p>
+              <div class="chips"><span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">DAX</span></div>
+              <div style="margin-top:10px"><a class="link" href="#">Case Study (PDF)</a> • <a class="link" href="#">Demo</a></div>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="thumb">Notebook</div>
+            <div class="meta">
+              <h4>Customer Churn Prediction</h4>
+              <p class="small muted">Model & retention strategy delivered 15% increase in retention during pilot tests.</p>
+              <div class="chips"><span class="chip">Python</span><span class="chip">sklearn</span></div>
+              <div style="margin-top:10px"><a class="link" href="#">Notebook</a> • <a class="link" href="#">GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="thumb">BI</div>
+            <div class="meta">
+              <h4>Financial Risk Dashboard</h4>
+              <p class="small muted">Risk heatmaps & prioritization — helped finance prioritize accounts and reduce review time.</p>
+              <div class="chips"><span class="chip">Tableau</span><span class="chip">MySQL</span></div>
+              <div style="margin-top:10px"><a class="link" href="#">Live</a> • <a class="link" href="#">Report</a></div>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="thumb">Analysis</div>
+            <div class="meta">
+              <h4>Marketing Insights — CodeX</h4>
+              <p class="small muted">Survey analysis across 10 cities; produced target segments & GTM recommendations.</p>
+              <div class="chips"><span class="chip">Power BI</span><span class="chip">SQL</span></div>
+              <div style="margin-top:10px"><a class="link" href="#">Report</a> • <a class="link" href="#">GitHub</a></div>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top:20px">
+          <a href="index.html" class="btn btn-ghost">Back to Home</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="reveal">
+      <div>© <span id="year2"></span> Rupali Pawar</div>
+      <div class="small muted">Projects • Portfolio</div>
+    </footer>
+  </div>
+
+  <!-- toast -->
+  <div id="toast" class="toast" aria-live="polite"></div>
+</body>
+</html>
