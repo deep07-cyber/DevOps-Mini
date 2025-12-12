@@ -1,534 +1,168 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Deep | Data Analyst</title>
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@500;700&display=swap"
-    rel="stylesheet">
+  <title>Rupali Pawar — Data Analyst (Dashboard)</title>
 
-  <style>
-    :root {
-      --bg: #0f1724;
-      --card: rgba(255, 255, 255, 0.06);
-      --glass: rgba(255, 255, 255, 0.06);
-      --accent: linear-gradient(135deg, #6d28d9 0%, #06b6d4 100%);
-      --muted: #9aa4b2;
-      --glass-border: rgba(255, 255, 255, 0.08);
-      --max-width: 1100px;
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    html,
-    body {
-      height: 100%
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(99, 102, 241, 0.08), transparent),
-        radial-gradient(900px 400px at 90% 90%, rgba(6, 182, 212, 0.06), transparent),
-        var(--bg);
-      color: #e6eef8;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      line-height: 1.45;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--max-width)
-    }
-
-    /* NAV */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 36px
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px
-    }
-
-    .logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      background: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: white
-    }
-
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      margin-left: 18px;
-      font-weight: 600
-    }
-
-    nav a.cta {
-      background: transparent;
-      border: 1px solid var(--glass-border);
-      padding: 8px 12px;
-      border-radius: 10px;
-      color: #fff
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 32px;
-      align-items: center;
-      margin-bottom: 48px
-    }
-
-    .hero-left h1 {
-      font-size: 48px;
-      margin: 0 0 12px 0;
-      letter-spacing: -1px
-    }
-
-    .hero-left p {
-      color: var(--muted);
-      margin: 0 0 18px 0;
-      font-size: 16px;
-      max-width: 700px
-    }
-
-    .btns {
-      display: flex;
-      gap: 12px
-    }
-
-    .btn {
-      padding: 12px 18px;
-      border-radius: 10px;
-      border: 0;
-      font-weight: 700;
-      cursor: pointer
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      box-shadow: 0 6px 18px rgba(13, 14, 31, 0.45)
-    }
-
-    .btn-ghost {
-      background: transparent;
-      border: 1px solid var(--glass-border);
-      color: #e6eef8
-    }
-
-    .hero-right {
-      backdrop-filter: blur(8px);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
-      border: 1px solid var(--glass-border);
-      padding: 22px;
-      border-radius: 16px
-    }
-
-    .profile {
-      display: flex;
-      gap: 16px;
-      align-items: center
-    }
-
-    .avatar {
-      width: 84px;
-      height: 84px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #0ea5a7, #7c3aed);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      font-weight: 700
-    }
-
-    .small {
-      color: var(--muted);
-      font-size: 14px
-    }
-
-    /* SECTIONS */
-    section {
-      margin-bottom: 44px
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 18px;
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 6px 30px rgba(2, 6, 23, 0.5)
-    }
-
-    /* SKILLS */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 12px
-    }
-
-    .skill {
-      min-width: 110px;
-      padding: 12px;
-      border-radius: 12px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-      border: 1px solid rgba(255, 255, 255, 0.03);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start
-    }
-
-    .skill b {
-      font-size: 14px
-    }
-
-    .skill small {
-      color: var(--muted)
-    }
-
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 16px
-    }
-
-    .project {
-      border-radius: 12px;
-      overflow: hidden
-    }
-
-    .project .thumb {
-      height: 140px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-      display: flex;
-      align-items: center;
-      justify-content: center
-    }
-
-    .project .meta {
-      padding: 12px
-    }
-
-    .project h4 {
-      margin: 0 0 6px 0
-    }
-
-    .chips {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 8px
-    }
-
-    .chip {
-      padding: 6px 8px;
-      border-radius: 999px;
-      font-size: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.03)
-    }
-
-    /* CONTACT */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 360px;
-      gap: 16px
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 14px
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid var(--glass-border);
-      background: transparent;
-      color: #e6eef8
-    }
-
-    form textarea {
-      min-height: 120px
-    }
-
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--muted);
-      font-size: 14px
-    }
-
-    /* reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: all 600ms cubic-bezier(.2, .9, .2, 1)
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none
-    }
-
-    /* responsive */
-    @media (max-width:1000px) {
-      .hero {
-        grid-template-columns: 1fr
-      }
-
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr
-      }
-    }
-
-    @media (max-width:640px) {
-      body {
-        padding: 24px
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr
-      }
-
-      nav a {
-        display: none
-      }
-
-      .brand {
-        gap: 8px
-      }
-
-      .hero-left h1 {
-        font-size: 36px
-      }
-    }
-
-    /* small helpers */
-    .muted {
-      color: var(--muted)
-    }
-
-    a.link {
-      color: inherit;
-      text-decoration: none
-    }
-
-    .toast {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: linear-gradient(135deg, #06b6d4, #6d28d9);
-      color: white;
-      padding: 14px 22px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-      z-index: 1000;
-      font-weight: 600;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
-
 <body>
   <div class="container">
-    <header>
+
+    <!-- NAV -->
+    <header class="nav">
       <div class="brand">
-        <div class="logo">D</div>
-        <div>
-          <div style="font-weight:700">Deep</div>
-          <div class="small">Data Analyst</div>
+        <div class="logo">RP</div>
+        <div class="brand-text">
+          <div class="brand-name">Rupali Pawar</div>
+          <div class="brand-role">Data Analyst • 7 yrs</div>
         </div>
       </div>
-      <nav>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact" class="cta">Contact</a>
+
+      <nav class="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link cta">Contact</a></li>
+        </ul>
+
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
       </nav>
     </header>
 
+    <!-- HERO -->
     <main>
-      <section class="hero">
+      <section class="hero reveal" id="intro">
         <div class="hero-left">
-          <h1 class="reveal">Hi, I'm <span
-              style="background:var(--accent);-webkit-background-clip:text;background-clip:text;color:transparent;">Deep</span>
-            — a Data Analyst.</h1>
-          <p class="reveal">Passionate Data Analyst with strong analytical and programming skills, seeking to leverage
-            data insights while
-            advancing into the field of Machine Learning and predictive analytics Education</p>
-          <div class="btns reveal">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="/Deep_Resume.pdf" class="btn btn-ghost">Download Resume</a>
+          <h1>Hi — I’m <span class="accent">Rupali Pawar</span></h1>
+          <p class="lead">I help companies transform complex data into actionable insights. Available for freelance projects globally.</p>
+
+          <div class="btns">
+            <a class="btn btn-primary" href="projects.html">View Projects</a>
+            <a class="btn btn-ghost" href="#contact">Contact</a>
+          </div>
+
+          <div class="quick-stats">
+            <div class="stat">
+              <div class="stat-num">7+</div>
+              <div class="stat-label muted">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">50+</div>
+              <div class="stat-label muted">Dashboards & Reports</div>
+            </div>
           </div>
         </div>
-        <aside class="hero-right card reveal">
+
+        <aside class="hero-right card">
           <div class="profile">
-            <div class="avatar">D</div>
+            <div class="avatar">RP</div>
             <div>
-              <div style="font-weight:700">Deep</div>
-              <div class="small">Data Analyst • Python • SQL • Power BI</div>
+              <div style="font-weight:700">Rupali Pawar</div>
+              <div class="small muted">Data Analyst • Power BI • Python • SQL</div>
             </div>
           </div>
 
-          <div style="margin-top:16px" class="small muted">Quick Stats</div>
-          <div style="display:flex;gap:12px;margin-top:8px">
-            <div class="card" style="padding:12px;border-radius:10px;flex:1;text-align:center">
-              <div style="font-weight:700">8+</div>
-              <div class="small muted">Projects</div>
-            </div>
-            <div class="card" style="padding:12px;border-radius:10px;flex:1;text-align:center">
-              <div style="font-weight:700">2</div>
-              <div class="small muted">Certifications</div>
-            </div>
+          <div class="video-preview">
+            <!-- placeholder video (replace VIDEO_ID) -->
+            <iframe id="introVideo" class="video" src="https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1"
+              title="Rupali Pawar — Intro" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            <button id="videoToggle" class="video-toggle">Unmute ▶</button>
           </div>
         </aside>
       </section>
 
+      <!-- SKILLS -->
       <section id="skills" class="reveal card">
         <h3>Skills</h3>
-        <p class="small muted">Tools and technologies I work with</p>
+        <p class="small muted">Tools and techniques built over 7 years</p>
         <div class="skills-grid">
-          <div class="skill"><b>Python</b><small>Pandas, Numpy</small></div>
-          <div class="skill"><b>Database</b><small>SQL, MYSQL</small></div>
-          <div class="skill"><b>Visualization</b><small>Power BI</small></div>
-          <div class="skill"><b>Data Cleaning</b><small>ETL, EDA, Preprocessing</small></div>
-          <div class="skill"><b>ML </b><small>Scikit-Learn</small></div>
-          <div class="skill"><b>Version Control</b><small>Git, GitHub</small></div>
-          <div class="skill"><b>Tools </b><small>Jupyter Notebook, Excel, Vs Code</small></div>
+          <div class="skill"><b>Python</b><small>Pandas, NumPy, automation</small></div>
+          <div class="skill"><b>SQL</b><small>Advanced queries, window functions</small></div>
+          <div class="skill"><b>Power BI</b><small>DAX, modeling, dashboards</small></div>
+          <div class="skill"><b>Tableau</b><small>Visual storytelling</small></div>
+          <div class="skill"><b>Excel</b><small>Power Query, VBA</small></div>
+          <div class="skill"><b>Analytics</b><small>EDA, A/B testing, forecasting</small></div>
         </div>
       </section>
 
-      <section id="projects" class="reveal">
-        <h3>Projects</h3>
-        <p class="small muted">Selected projects — click to view on GitHub or open live demo</p>
-        <div class="projects-grid">
+      <!-- PROJECTS PREVIEW -->
+      <section id="projects-preview" class="reveal">
+        <h3>Selected Projects</h3>
+        <p class="small muted">Click "View" to open the full Projects page.</p>
 
-          <!-- Project 1 -->
-          <article class="project card reveal">
-            <div class="thumb">Screenshot / Chart</div>
+        <div class="projects-grid">
+          <article class="project card">
+            <div class="thumb">Chart preview</div>
             <div class="meta">
-              <h4>CodeX Marketing Insights Project</h4>
-              <p class="small muted">• Analyzed 10K survey responses from 10 Indian cities to derive actionable
-                marketing insights for a German
-                beverage brand.
-                Cleaned and visualized data to identify awareness gaps, target demographics, and strategies to improve
-                market penetration.
-              </p>
-              <div class="chips">
-                <span class="chip">Power BI</span>
-                <span class="chip">SQL</span>
-                <span class="chip">Excel</span>
-              </div>
-              <div style="margin-top:10px;display:flex;gap:8px">
-                <a class="link" href="#">Live</a>
-                <a class="link" href="#">GitHub</a>
-              </div>
+              <h4>Sales Performance Dashboard</h4>
+              <p class="small muted">Interactive dashboard saving 40 hours/month. Live refresh via SQL source.</p>
+              <div class="chips"><span class="chip">Power BI</span><span class="chip">SQL</span></div>
+              <div style="margin-top:10px"><a href="projects.html">View</a></div>
             </div>
           </article>
 
-          <!-- Project 2 -->
-          <article class="project card reveal">
+          <article class="project card">
             <div class="thumb">Notebook</div>
             <div class="meta">
-              <h4>Customer Churn Analysis</h4>
-              <p class="small muted">EDA, feature engineering and baseline models to predict churn and suggest retention
-                actions.</p>
-              <div class="chips">
-                <span class="chip">Python</span>
-                <span class="chip">scikit-learn</span>
-              </div>
-              <div style="margin-top:10px;display:flex;gap:8px">
-                <a class="link" href="#">Notebook</a>
-                <a class="link" href="#">GitHub</a>
-              </div>
+              <h4>Customer Churn Model</h4>
+              <p class="small muted">Baseline model + retention segments — 15% uplift in retention experiments.</p>
+              <div class="chips"><span class="chip">Python</span><span class="chip">scikit-learn</span></div>
+              <div style="margin-top:10px"><a href="projects.html">View</a></div>
             </div>
           </article>
 
-          <!-- Project 3 -->
-          <article class="project card reveal">
+          <article class="project card">
             <div class="thumb">Dashboard</div>
             <div class="meta">
-              <h4>Market Basket Analysis</h4>
-              <p class="small muted">Association analysis to drive cross-sell recommendations and category placement.
-              </p>
-              <div class="chips">
-                <span class="chip">Apriori</span>
-                <span class="chip">SQL</span>
-              </div>
-              <div style="margin-top:10px;display:flex;gap:8px">
-                <a class="link" href="#">Report</a>
-                <a class="link" href="#">GitHub</a>
-              </div>
+              <h4>Financial Risk Dashboard</h4>
+              <p class="small muted">Risk heatmaps & prioritization for Finance—faster decisioning.</p>
+              <div class="chips"><span class="chip">Tableau</span><span class="chip">MySQL</span></div>
+              <div style="margin-top:10px"><a href="projects.html">View</a></div>
             </div>
           </article>
-
         </div>
       </section>
 
+      <!-- CONTACT -->
       <section id="contact" class="reveal card">
         <h3>Contact</h3>
-        <p class="small muted">Have a project or interview question? Let's talk.</p>
+        <p class="small muted">Have a project in mind? Share scope and timeline, and I’ll respond quickly.</p>
+
         <div class="contact-grid">
           <div>
             <form id="contactForm">
               <label for="name">Name</label>
-              <input id="name" name="name" placeholder="Your name" required />
+              <input id="name" name="name" placeholder="Your name" required>
 
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="your@email.com" required />
+              <input id="email" name="email" type="email" placeholder="your@email.com" required>
 
               <label for="message">Message</label>
               <textarea id="message" name="message" placeholder="Tell me about your project" required></textarea>
 
-              <button type="submit" class="btn btn-primary">Send Message</button>
+              <div style="display:flex;gap:12px;margin-top:10px">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="reset" class="btn btn-ghost">Clear</button>
+              </div>
+
+              <div style="margin-top:14px">
+                <a class="btn-resume" href="Rupali_Pawar_Resume.pdf" download>Download Resume</a>
+              </div>
             </form>
           </div>
 
           <aside>
             <div class="card" style="padding:12px;border-radius:10px">
               <div style="font-weight:700">Email</div>
-              <div class="small muted">deepsinghrajput975@gmail.com</div>
+              <div class="small muted">rupali@example.com</div>
 
               <div style="margin-top:12px;font-weight:700">Social</div>
-              <div style="margin-top:8px" class="small muted">GitHub • LinkedIn • Twitter</div>
+              <div style="margin-top:8px" class="small muted">LinkedIn • GitHub</div>
             </div>
           </aside>
         </div>
@@ -537,102 +171,13 @@
     </main>
 
     <footer class="reveal">
-      <div>© <span id="year"></span> Deep • Built with HTML + CSS + JS</div>
-      <div class="small muted">Made for job applications & portfolio reviews</div>
+      <div>© <span id="year"></span> Rupali Pawar</div>
+      <div class="small muted">Portfolio • Freelance-ready</div>
     </footer>
-
   </div>
 
-  <script>
-    // Small helpers: set year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- toast -->
+  <div id="toast" class="toast" aria-live="polite"></div>
 
-    // Reveal on scroll using IntersectionObserver
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      })
-    });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const href = a.getAttribute('href');
-        if (href.length > 1) {
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      })
-    });
-
-    // Simple form handler (client-only). Replace with your backend or email service.
-    function submitForm() {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if (!name || !email || !message) {
-        alert('Please fill all fields');
-        return;
-      }
-      // As a simple demo, open user's email client using mailto (edit before publish)
-      const subject = encodeURIComponent('Portfolio contact from ' + name);
-      const body = encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')');
-      window.location.href = 'mailto:deep@example.com?subject=' + subject + '&body=' + body;
-    }
-
-    // Toast helper
-    function showToast() {
-      const toast = document.getElementById('toast');
-      toast.textContent = "message";
-      toast.classList.add('show');
-
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000); // hide after 3 seconds
-    }
-    const form = document.getElementById('contactForm');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const data = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-      };
-
-      try {
-        const res = await fetch('http://127.0.0.1:5000/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        const json = await res.json();
-        if (json.success) {
-          //alert(json.message);
-          showToast();
-          form.reset();
-        } else {
-          alert(json.error || 'Failed to send message');
-        }
-      } catch (err) {
-        alert('Server error. Try again later.');
-        console.error(err);
-      }
-    });
-
-
-
-  </script>
-
-  <!-- Toast notification -->
-  <div id="toast" class="toast"></div>
 </body>
-
 </html>
