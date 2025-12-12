@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pandas as pd
 import os
 from datetime import datetime
@@ -18,8 +18,8 @@ if not os.path.exists(CSV_FILE):
     df.to_csv(CSV_FILE, index=False)
 
 @app.route('/',methods=['GET'])
-def serve_index():
-    return send_from_directory('.', 'index.html')
+def home():
+    return render_template("index.html")
 
 @app.route('/contact', methods=['POST'])
 def contact():
