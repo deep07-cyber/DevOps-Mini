@@ -33,37 +33,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Hamburger menu
-  const hamb = document.querySelectorAll('.hamburger');
-  hamb.forEach(button => {
-    button.addEventListener('click', () => {
-      const ul = button.closest('.nav-menu')?.querySelector('ul');
-      if (!ul) return;
-      const isOpen = ul.style.display === 'flex';
-      ul.style.display = isOpen ? 'none' : 'flex';
-      button.setAttribute('aria-expanded', String(!isOpen));
-    });
-  });
+// Hamburger toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-  // Highlight active nav link (based on pathname or hash)
-  const navLinks = document.querySelectorAll('.nav-menu a.nav-link');
-  function markActive() {
-    const path = window.location.pathname.split('/').pop();
-    navLinks.forEach(a => {
-      a.classList.remove('active');
-      const href = a.getAttribute('href');
-      if (href === path || (href === window.location.hash && href !== '#')) {
-        a.classList.add('active');
-      }
-      // home fallback
-      if ((path === '' || path === 'index.html') && a.getAttribute('href').includes('index.html')) a.classList.add('active');
-    });
-  }
-  markActive();
-  window.addEventListener('popstate', markActive);
+hamburger.addEventListener('click', () => {
+  const isOpen = navMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+// Highlight active nav link
+const navLinks = document.querySelectorAll('.nav-menu a');
+
+function markActive() {
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+
+    if (link.getAttribute('href') === current) {
+      link.classList.add('active');
+    }
+  });
+}
+
+markActive();
+
+// Close menu on link click (mobile UX)
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
+});
+
+
 
    
- const box = document.getElementById("floating-video");
+const box = document.getElementById("floating-video");
 const handle = document.getElementById("dragHandle");
 const closeBtn = document.getElementById("closeVideo");
 
