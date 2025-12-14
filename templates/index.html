@@ -71,118 +71,275 @@
         </div>
       </section>
 
-      <!-- SKILLS -->
       <section id="skills" class="skillsection">
-        <h1 class= "skillheading1">What I Do ?</h1>
-        <p class="small muted">Tools and techniques built over 7 years</p>
-        <div class="idosection">
-          <div class="section section1">
-            <h3>Data Quality & Governance: Design, implement, and monitor enterprise-wide data quality frameworks and governance practices to ensure data integrity and compliance.</h3>
-          </div>
-          <div class="section section2">
-            <h3>Data Automation & Validation: Build automated pipelines using Python, SQL, and cloud platforms (Azure, GCP, Snowflake) to validate and cleanse large-scale financial and HR datasets.</h3>
+  <h1 class="skillheading1">From complex data to confident decisions</h1>
 
-          </div>
-          <div class="section section3">
-            <h3>Business Intelligence & Dashboards: Create insightful dashboards and KPIs in Power BI and Tableau to turn complex datasets into actionable business decisions.</h3>
-          </div>
-          <div class="section section4">
-            <h3>Cloud & Data Migration: Lead cloud migrations and system transformations while maintaining data accuracy and regulatory compliance.</h3>
-          </div>
-          <div class="section section5">
-            <h3>Metadata Management & Cataloging: Configure and manage tools like Collibra, OvalEdge, and Purview for lineage, data catalogs, and business glossaries.</h3>
-          </div>
-          <div class="section section6">
-            <h3>Stakeholder Collaboration & Insights Delivery: Work closely with cross-functional teams to solve data issues, implement remediation plans, and deliver analytical insights that drive business value.</h3>
+  <div class="idosection">
+    <div class="section section1">
+      <div class="sectionimageblock" >
+        <img src="{{ url_for('static', filename='images/s1.png') }}" alt="Profile image" class='sectionImage'>
+      </div>
+      <h3>Data Quality & Governance</h3>
+      <div class="stack">
+        <span>Data Quality Frameworks</span>
+        <span>Governance</span>
+        <span>Regulatory Compliance</span>
+        <span>Data Integrity</span>
+        <p>Know more</p>
+
+      </div>
+    </div>
+
+<div class="section section2">
+  <div class="sectionimageblock">
+    <img src="{{ url_for('static', filename='images/s2.png') }}" alt="Profile image" class='sectionImage'>
+  </div>
+  <h3>Data Automation & Validation</h3>
+  <div class="stack">
+    <span>Python</span>
+    <span>SQL</span>
+    <span>ETL Pipelines</span>
+    <span>Cloud Validation</span>
+    <p>Know more</p>
+
+  </div>
+</div>
+
+<div class="section section3">
+  <div class="sectionimageblock">
+    <img src="{{ url_for('static', filename='images/s3.png') }}" alt="Profile image" class='sectionImage'>
+  </div>
+  <h3>Business Intelligence</h3>
+  <div class="stack">
+    <span>Power BI</span>
+    <span>Tableau</span>
+    <span>KPIs</span>
+    <span>Data Storytelling</span>
+    <p>Know more</p>
+  </div>
+</div>
+
+<div class="section section4">
+  <div class="sectionimageblock">
+    <img src="{{ url_for('static', filename='images/s4.png') }}" alt="Profile image" class='sectionImage'>
+  </div>
+  <h3>Cloud & Data Migration</h3>
+  <div class="stack">
+    <span>Azure</span>
+    <span>GCP</span>
+    <span>Snowflake</span>
+    <span>Data Migration</span>
+    <p>Know more</p>
+
+  </div>
+</div>
+
+<div class="section section5">
+  <div class="sectionimageblock">
+    <img src="{{ url_for('static', filename='images/s5.png') }}" alt="Profile image" class='sectionImage'>
+  </div>
+  <h3>Metadata Management</h3>
+  <div class="stack">
+    <span>Collibra</span>
+    <span>OvalEdge</span>
+    <span>Purview</span>
+    <span>Data Lineage</span>
+    <p>Know more</p>
+
+  </div>
+</div>
+
+<div class="section section6">
+  <div class="sectionimageblock">
+    <img src="{{ url_for('static', filename='images/s6.png') }}" alt="Profile image" class='sectionImage'>
+  </div>
+  <h3>Stakeholder Collaboration</h3>
+  <div class="stack">
+    <span>Business Users</span>
+    <span>Data Teams</span>
+    <span>Insights Delivery</span>
+    <span>Problem Solving</span>
+    <p>Know more</p>
+
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+      <section id="projects-preview" class="projects-section">
+  <h2 class="section-title">Selected Projects</h2>
+  <p class="section-subtitle">
+    A snapshot of high-impact analytics solutions delivered for business teams.
+  </p>
+
+  <div class="projects-grid">
+    <!-- Project 1 -->
+    <article class="project-block">
+      <div class="projectgap"></div>
+      <div class = "project-image"></div>
+      <div class="project-card">
+      <div class="project-header">
+        <h3>Sales Performance Dashboard</h3>
+      </div>
+      <span class="impact">⏱ 40+ hrs/month saved</span>
+
+      <p class="project-desc">
+        Automated executive-level sales reporting with real-time KPIs, enabling
+        faster and data-driven decisions.
+      </p>
+
+      <ul class="project-points">
+        <li>Revenue, growth & trend analysis</li>
+        <li>SQL-based live data refresh</li>
+        <li>Drill-downs by region & product</li>
+      </ul>
+
+      <div class="project-footer">
+        <div class="chips">
+          <span class="chip">Power BI</span>
+          <span class="chip">SQL</span>
+        </div>
+      </div>
+      <a href="projects.html" class="view-btn">View Case Study</a>
+    </div>
+    <div class="projectgap"></div>
+
+    </article>
+
+    <!-- Project 2 -->
+    <article class="project-block">
+      <div class="projectgap"></div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Customer Churn Prediction</h3>
+        </div>
+        <span class="impact">📈 +15% retention uplift</span>
+        
+        <p class="project-desc">
+          Built a predictive churn model to identify high-risk customers and
+          support targeted retention strategies.
+        </p>
+        
+        <ul class="project-points">
+          <li>Feature engineering & modeling</li>
+          <li>Customer risk segmentation</li>
+          <li>Actionable business insights</li>
+        </ul>
+        
+        <div class="project-footer">
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Scikit-learn</span>
           </div>
         </div>
-      </section>
+        <a href="projects.html" class="view-btn">Explore Solution</a>
+      </div>
+      <div class = "project-image"></div>
+      <div class="projectgap"></div>
 
-      <!-- PROJECTS PREVIEW -->
-      <section id="projects-preview" class="reveal">
-        <h3>Selected Projects</h3>
-        <p class="small muted">Click "View" to open the full Projects page.</p>
+    </article>
 
-        <div class="projects-grid">
-          <article class="project card">
-            <div class="thumb">Chart preview</div>
-            <div class="meta">
-              <h4>Sales Performance Dashboard</h4>
-              <p class="small muted">Interactive dashboard saving 40 hours/month. Live refresh via SQL source.</p>
-              <div class="chips"><span class="chip">Power BI</span><span class="chip">SQL</span></div>
-              <div style="margin-top:10px"><a href="projects.html">View</a></div>
-            </div>
-          </article>
+    <!-- Project 3 -->
+    <article class="project-block">
+      <div class="projectgap"></div>
+      <div class = "project-image"></div>
+      <div class="project-card">
+      <div class="project-header">
+        <h3>Financial Risk Dashboard</h3>
+      </div>
+      <span class="impact">⚠ Faster risk prioritization</span>
 
-          <article class="project card">
-            <div class="thumb">Notebook</div>
-            <div class="meta">
-              <h4>Customer Churn Model</h4>
-              <p class="small muted">Baseline model + retention segments — 15% uplift in retention experiments.</p>
-              <div class="chips"><span class="chip">Python</span><span class="chip">scikit-learn</span></div>
-              <div style="margin-top:10px"><a href="projects.html">View</a></div>
-            </div>
-          </article>
+      <p class="project-desc">
+        Designed a finance-focused risk monitoring dashboard to surface critical
+        risks early and improve decision speed.
+      </p>
 
-          <article class="project card">
-            <div class="thumb">Dashboard</div>
-            <div class="meta">
-              <h4>Financial Risk Dashboard</h4>
-              <p class="small muted">Risk heatmaps & prioritization for Finance—faster decisioning.</p>
-              <div class="chips"><span class="chip">Tableau</span><span class="chip">MySQL</span></div>
-              <div style="margin-top:10px"><a href="projects.html">View</a></div>
-            </div>
-          </article>
+      <ul class="project-points">
+        <li>Risk heatmaps & scoring</li>
+        <li>Priority-based alert views</li>
+        <li>Stakeholder-friendly visuals</li>
+      </ul>
+
+      <div class="project-footer">
+        <div class="chips">
+          <span class="chip">Tableau</span>
+          <span class="chip">MySQL</span>
         </div>
-      </section>
+      </div>
+      <a href="projects.html" class="view-btn">View Case Study</a>
+      </div>
+      <div class="projectgap"></div>
+    </article>
+  </div>
+</section>
+
 
       <!-- CONTACT -->
-      <section id="contact" class="reveal card">
-        <h3>Contact</h3>
-        <p class="small muted">Have a project in mind? Share scope and timeline, and I’ll respond quickly.</p>
+<section id="contact" class="contact-section">
+  <div class="contact-wrapper">
 
-        <div class="contact-grid">
-          <div>
-            <form id="contactForm">
-              <label for="name">Name</label>
-              <input id="name" name="name" placeholder="Your name" required>
+    <header class="contact-header">
+      <h2>Let’s Work Together</h2>
+      <p>
+        Have a project in mind? Share the scope and timeline, and I’ll get back to you promptly.
+      </p>
+    </header>
 
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="your@email.com" required>
+    <div class="contact-grid">
 
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell me about your project" required></textarea>
-
-              <div style="display:flex;gap:12px;margin-top:10px">
-                <button type="submit" class="btn btn-primary">Send Message</button>
-                <button type="reset" class="btn btn-ghost">Clear</button>
-              </div>
-
-              <div style="margin-top:14px">
-                <a class="btn-resume" href="../static/resume.pdf" download>Download Resume</a>
-              </div>
-            </form>
-          </div>
-
-          <aside>
-            <div class="card" style="padding:12px;border-radius:10px">
-              <div style="font-weight:700">Email</div>
-              <div class="small muted">roopalipawar00@gmail.com</div>
-
-              <div style="margin-top:12px;font-weight:700">Social</div>
-              <div style="margin-top:8px" class="small muted">LinkedIn • GitHub</div>
-            </div>
-          </aside>
+      <!-- FORM -->
+      <form id="contactForm" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" placeholder="Your full name" required>
         </div>
-      </section>
 
-    </main>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@company.com" required>
+        </div>
 
-    <footer class="reveal">
-      <div>© <span id="year"></span> Rupali Pawar</div>
-      <div class="small muted">Portfolio • Freelance-ready</div>
-    </footer>
+        <div class="form-group">
+          <label for="message">Project Details</label>
+          <textarea id="message" name="message" rows="4"
+            placeholder="Briefly describe your goals, data size, and timeline" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="reset" class="btn btn-ghost">Clear</button>
+        </div>
+
+        <a class="btn-resume" href="../static/resume.pdf" download>
+          Download Resume
+        </a>
+      </form>
+
+      <!-- INFO PANEL -->
+      <aside class="contact-info">
+        <div class="info-block">
+          <h4>Email</h4>
+          <p>roopalipawar00@gmail.com</p>
+        </div>
+
+        <div class="info-block">
+          <h4>Connect</h4>
+          <p>LinkedIn • GitHub</p>
+        </div>
+      </aside>
+
+    </div>
   </div>
+</section>
+
+<footer class="footer">
+  <div>© <span id="year"></span> Rupali Pawar</div>
+  <div class="small muted">Data Analytics • Consulting • Freelance</div>
+</footer>
+
 
   <!-- toast -->
   <div id="toast" class="toast" aria-live="polite"></div>
